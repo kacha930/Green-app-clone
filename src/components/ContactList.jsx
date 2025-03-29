@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import useStore from './store'; // Import the Zustand store
+import useStore from './store'; // Import Zustand store
+import { getTime } from '../logic/whatsapp'; // Import getTime to format time
 
 const Container = styled.div`
   display: flex;
@@ -108,7 +109,8 @@ const ContactComponent = (props) => {
                 <ContactName>{userData.name}</ContactName>
                 <MessageText>{userData.lastText}</MessageText>
             </ContactInfo>
-            <MessageText>{userData.lastTextTime}</MessageText>
+            {/* Format lastTextTime using getTime function */}
+            <MessageText>{getTime(userData.lastTextTime)}</MessageText>
         </ContactItem>
     );
 };

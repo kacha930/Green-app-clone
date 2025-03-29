@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import useStore from './store'; // Import Zustand store
+import { getTime } from '../logic/whatsapp'; // Assuming this function formats the time
 
 const Container = styled.div`
   display: flex;
@@ -127,7 +128,7 @@ const Conversation = () => {
             const message = {
                 sender: 'You',
                 text: newMessage,
-                time: new Date().toLocaleTimeString(),
+                time: getTime(new Date()),  // Use the getTime function to format the time
             };
             const updatedMessages = [...messagesList, message];
             updateMessagesList(updatedMessages); // Update the messages list with the new message
@@ -154,7 +155,7 @@ const Conversation = () => {
                         <Message isYours={msg.sender === 'You'}>
                             <strong>{msg.sender}: </strong>{msg.text}
                             <br />
-                            <span>{msg.time}</span>
+                            <span>{getTime(msg.time)}</span> {/* Format message time using getTime */}
                         </Message>
                     </MessageDiv>
                 ))}
