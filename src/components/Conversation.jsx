@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import useStore from './store'; // Import Zustand store
-import { getTime } from '../logic/whatsapp'; // Assuming this function formats the time
+import useStore from './store';
+import { getTime } from '../logic/whatsapp'; 
 
 const Container = styled.div`
   display: flex;
@@ -137,7 +137,7 @@ const Conversation = () => {
     };
 
     if (!selectedContact) {
-        return <Container>Please select a contact to start a conversation.</Container>;
+        return <Container>select a contact to start a conversation.🤓 </Container>;
     }
 
     return (

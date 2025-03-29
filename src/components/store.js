@@ -6,7 +6,7 @@ const useStore = create((set) => ({
         {
             id: 1,
             name: "Harry Kane",
-            profilePic: "/profile/profilephoto.jpeg",
+            profilePic: "/profile/pp4.png",
             lastText: "Hey Man",
             lastTextTime: getTime("12:58 PM"), // Format the time using getTime
         },
